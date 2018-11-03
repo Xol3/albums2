@@ -4,12 +4,12 @@ import { StyleSheet, Text, View } from 'react-native';
 
 
 //crea el componente
-const Header = () => {
+const Header = (props) => {
   const { textStyle, viewStyle } = styles;
 
   return(
     <View style={styles.viewStyle}>
-    <Text style={styles.header}>HEADER</Text>
+    <Text style={styles.textStyle}>{props.headerText}</Text>
     </View>
   );
 };
@@ -19,12 +19,21 @@ export default Header;
 
 const styles = StyleSheet.create({
   viewStyle:{
-    backgroundColor: 'rgb(0,0,200)'
+    backgroundColor: 'rgb(247, 1, 93)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 40,
+    paddingTop: 15,
+    shadowColor: '#000',
+    shadowOffset:{ width: 0 , height: 8},
+    shadowOpacity: .9,
+    elevation: 2,
+    position: 'relative'
   },
-  header: {
-    fontSize: 28,
+  textStyle: {
+    fontSize: 24,
     textAlign: 'center',
-    color: 'rgb(255,255,0)',
+    color: 'rgb(1, 92, 249)',
     marginBottom: 5,
   },
 });
